@@ -30,4 +30,9 @@ class ExampleUnitTest {
 
         println("$user $user2 $user3")
     }
+
+    @Test
+    fun test_factory(){
+        val user = User.makeUser("Eugene Eremin")
+    }
 }
