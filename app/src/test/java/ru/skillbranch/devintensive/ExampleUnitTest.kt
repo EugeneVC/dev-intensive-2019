@@ -3,6 +3,7 @@ package ru.skillbranch.devintensive
 import org.junit.Test
 
 import org.junit.Assert.*
+import ru.skillbranch.devintensive.models.*
 
 import ru.skillbranch.devintensive.models.User
 import java.util.*
@@ -34,5 +35,15 @@ class ExampleUnitTest {
     @Test
     fun test_factory(){
         val user = User.makeUser("Eugene Eremin")
+    }
+
+    @Test
+    fun test_abstract_factory(){
+        val user = User.makeUser("Eugene Eremin")
+        val txtMessage = BaseMessage.makeMessage(user, Chat("0"), payload =  "any text message", type="text")
+        var imageMessage  = BaseMessage.makeMessage(user, Chat("0"),  payload = "https://anyurl.com", type="image",isIncomming = true)
+
+        println(txtMessage.formatMessage())
+        println(imageMessage.formatMessage())
     }
 }
