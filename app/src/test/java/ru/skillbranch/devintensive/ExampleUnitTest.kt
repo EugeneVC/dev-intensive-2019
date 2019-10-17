@@ -5,6 +5,7 @@ import org.junit.Test
 import org.junit.Assert.*
 import ru.skillbranch.devintensive.extensions.format
 import ru.skillbranch.devintensive.models.*
+import ru.skillbranch.devintensive.utils.Utils
 
 import ru.skillbranch.devintensive.models.User
 import java.util.*
@@ -38,6 +39,14 @@ class ExampleUnitTest {
         val user = User.makeUser("Eugene Eremin")
 
         println(user.printMe())
+    }
+
+    @Test
+    fun test_parse_fields(){
+        println(Utils.parseFullName(null)) //null null
+        println(Utils.parseFullName("")) //null null
+        println(Utils.parseFullName(" ")) //null null
+        println(Utils.parseFullName("John")) //John null
     }
 
     @Test
