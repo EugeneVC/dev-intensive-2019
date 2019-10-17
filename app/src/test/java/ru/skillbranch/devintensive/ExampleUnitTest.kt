@@ -3,6 +3,7 @@ package ru.skillbranch.devintensive
 import org.junit.Test
 
 import org.junit.Assert.*
+import ru.skillbranch.devintensive.extensions.format
 import ru.skillbranch.devintensive.models.*
 
 import ru.skillbranch.devintensive.models.User
@@ -45,5 +46,12 @@ class ExampleUnitTest {
 
         println(txtMessage.formatMessage())
         println(imageMessage.formatMessage())
+    }
+
+    @Test
+    fun test_date(){
+        val user = User.makeUser("Eugene Eremin")
+        println(user.lastVisit?.format())
+        println(user.lastVisit?.format("HH:mm"))
     }
 }
