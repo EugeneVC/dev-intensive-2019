@@ -41,6 +41,7 @@ class ExampleUnitTest {
     @Test
     fun test_abstract_factory(){
         val user = User.makeUser("Eugene Eremin")
+
         val txtMessage = BaseMessage.makeMessage(user, Chat("0"), payload =  "any text message", type="text")
         var imageMessage  = BaseMessage.makeMessage(user, Chat("0"),  payload = "https://anyurl.com", type="image",isIncomming = true)
 

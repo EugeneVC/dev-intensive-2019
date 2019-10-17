@@ -1,5 +1,6 @@
 package ru.skillbranch.devintensive.models
 
+import ru.skillbranch.devintensive.extensions.format
 import java.util.*
 
 class ImageMessage(
@@ -11,7 +12,6 @@ class ImageMessage(
     var image:String?
 ): BaseMessage(id, from,chat,isIncoming,date){
 
-    override fun formatMessage():String{
-        TODO("Not implemeted")
-    }
+    override fun formatMessage():String  ="${from?.firstName} " +
+                "${ if (isIncomming) "получил" else "отправил"} изображение \"$image\" ${date.format()}"
 }
