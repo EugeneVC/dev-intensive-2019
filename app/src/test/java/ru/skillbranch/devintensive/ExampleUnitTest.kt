@@ -36,6 +36,8 @@ class ExampleUnitTest {
     @Test
     fun test_factory(){
         val user = User.makeUser("Eugene Eremin")
+
+        println(user.printMe())
     }
 
     @Test
